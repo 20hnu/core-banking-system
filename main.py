@@ -1,40 +1,36 @@
 from models.customers import Customer
 from models.transaction import Transaction
 
-customer = Customer()
-txn = Transaction()
-def open_account():
-    customer_details ={
-        "first_name" : "Ramesh",
-        "middle_name" :"Kumar",
-        "last_name" : "Sharma",
-        "email" : "sharma.ramesh.2081@gmail.com",
-        "phone_number" :"980597499",
-        "dob" : "2058-01-01"
-    }
-    account_details = {
-        "account_type" : "Savings",
-        "account_number" : "473569234",
-        "balance" : 50000
-    }
-    authenticate_details = {
-        "username" : "ramesh",
-        "password" : ";'[h]"
-    }
+def banking_system():
+    customer = Customer()
+    txn = Transaction()
 
-    if customer.open_account(customer_details,account_details,authenticate_details):
-        print("Account opened")
-    else:
-        print("Failed to open account")
-
-def login():
-    user_name = "bishow"
-    password = "12345678"
+    print("Welcome to Chad Banking System")
+    print("Please login:")
+    user_name = input("Username: ")
+    password = input("Password: ")
     user = customer.login(user_name,password)
     if user:
         print("Login success")
-        if txn.add_transaction(user['customer_id'], "Deposit", 80000):
-            print("Transaction completed")
+        print("Choose Transaction type: \n1. Deposit \n2. Withdraw \n3. Transfer")
+        txn_type = int(input("Enter transaction type: "))
+        amount = int(input("Enter amount: "))
+        remarks = input("Enter remarks: ")
+        try:
+            if txn_type == 1:
+                txn.add_transaction(user['account_id'], "Deposit", amount,remarks)
+            elif txn_type == 2:
+                txn.add_transaction(user['account_id'], "Withdraw", amount,remarks)
+            else:
+                to_account_id = int(input("Enter to account id: "))
+                txn.add_transaction(user['account_id'], "Transfer", amount,remarks, to_account_id)
+        except Exception as e:
+            print("Error:",e)
+            print("Transaction failed")
 
-# login()
-open_account()
+
+    else:
+        print("Login failed")
+
+if __name__ == '__main__':
+    banking_system()

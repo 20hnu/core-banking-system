@@ -4,7 +4,6 @@ import os
 
 load_dotenv()  # Loads variables from .env
 host, user, password, db = os.getenv('host'), os.getenv('user'), os.getenv('password'), os.getenv('db')
-print(host,user,password,db)
 def get_connection():
     return pymysql.connect(host=host, user=user, password= password, db=db, port=3306,cursorclass=pymysql.cursors.DictCursor)
 
