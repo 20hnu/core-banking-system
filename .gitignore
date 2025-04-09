@@ -175,5 +175,5 @@ cython_debug/
 
 
 # added by  me
-db/
+.env
 myenv/
