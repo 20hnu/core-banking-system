@@ -34,14 +34,17 @@ class Customer:
             query = "Insert into Account (customer_id, account_type,account_number, balance,status) values (%s, %s, %s, %s, %s)"
             self.cursor.execute(query,(new_cust_id, account_details["account_type"], account_details["account_number"], account_details["balance"],"Active"))
             self.conn.commit()
-            print("New account added",new_cust_id)
 
             return True 
         
         except Exception as e:
             self.conn.rollback()
-            print("Error: ", e)
+            print("Error from customers: ", e)
             return False
+        
+        finally:
+            self.cursor.close()
+            self.conn.close()
 
     def login(self,user_name,password):
         try:
@@ -49,19 +52,22 @@ class Customer:
             self.cursor.execute(query, (user_name, password))
 
             user = self.cursor.fetchone()
-            print("login success",user)
             update_login_time = "UPDATE Authenticate SET last_login = NOW() WHERE username like %s"
             self.cursor.execute(update_login_time,(user_name))
             self.conn.commit()
             get_account_id = "SELECT account_id FROM Account WHERE customer_id = %s"
             self.cursor.execute(get_account_id,(user['customer_id']))
             account_id = self.cursor.fetchone()
-            print("Account id",account_id)
             return account_id
         
         except Exception as e:
-            print("Error:",e)
+            self.conn.rollback()
+            print("Error from customer:",e)
             return False
+        
+        finally:
+            self.cursor.close()
+            self.conn.close()
         
 
 if __name__ == '__main__':

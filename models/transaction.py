@@ -1,5 +1,4 @@
 from db.db_config import get_connection
-from datetime import datetime
 
 class Transaction:
     def __init__(self):
@@ -7,11 +6,11 @@ class Transaction:
         self.cursor = self.conn.cursor()
     
     def add_transaction(self, account_id, transaction_type, amount, remarks,to_account_id=None):
-        if account_id != account_id:
+        if account_id != to_account_id:
             try:
                 txn_query = """ INSERT INTO Transactions (account_id, type, amount,remarks,status,to_account_id) VALUES (%s, %s, %s, %s, %s, %s) """
                 # self.cursor.execute(txn_query,(1, "Deposit",80000, "Salary","Success",None))
-                self.cursor.execute(txn_query,(account_id, transaction_type,amount,remarks,"Success",None))
+                self.cursor.execute(txn_query,(account_id, transaction_type,amount,remarks,"Success",to_account_id))
 
 
                 if transaction_type == "Deposit":
@@ -34,10 +33,16 @@ class Transaction:
             
             except Exception as e:
                 self.conn.rollback()
-                print("Error",e)
+                print("Error from transaction",e)
                 return False
+            
+            finally:
+                self.cursor.close()
+                self.conn.close()
         else:
             print("Transaction failed")
+            self.cursor.close()
+            self.conn.close()
             return False
 
     
