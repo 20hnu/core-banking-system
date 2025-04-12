@@ -40,9 +40,21 @@ This project is a prototype of a **Core Banking System** developed in **Python**
    git clone https://github.com/20hnu/core-banking-system.git
    cd core-banking-system
    ```
-2. Install dependencies:
+2. Create Virtual Environment
+   ##### For Linux/macOS
     ```bash
-     pip install -r requirements.txt
+    python3 -m venv venv
+    source venv/bin/activate
+    
+##### For Windows
+
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+3. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Entity Relationship Diagram
 
