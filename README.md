@@ -42,7 +42,7 @@ This project is a prototype of a **Core Banking System** developed in **Python**
    ```
 2. Install dependencies:
     ```bash
-     pip install -r requirements.txt```
+     pip install -r requirements.txt
 
 ## Entity Relationship Diagram
 
