@@ -1,4 +1,5 @@
 
+
 #  Core Banking System with Analytics
 
 This project is a prototype of a **Core Banking System** developed in **Python** using . It connects to a **MySQL** database using **PyMySQL** and supports authentication, transaction handling, and analytical reporting for account activities using **Streamlit**.
@@ -141,3 +142,4 @@ create table Authenticate (
     on delete cascade on update cascade
 );
 ```
+
