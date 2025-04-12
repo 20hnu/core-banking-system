@@ -59,14 +59,14 @@ This project is a prototype of a **Core Banking System** developed in **Python**
 
 ## Entity Relationship Diagram
 
-![Alt Text](https://github.com/20hnu/core-banking-system/blob/main/db/modified_erd_banking_system.png?raw=true)
+![Alt Text](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/modified_erd_banking_system.png?raw=true)
 
 ## Data Flow Diagram
 
-![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/db/dfd_banking_system.png?raw=true)
+![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dfd_banking_system.png?raw=true)
 
 ## Dashboard 
-![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/db/dashboard_Sample.png?raw=true)
+![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dashboard_Sample.png?raw=true)
 
 ## SQL Code for creating database
 ```sql
