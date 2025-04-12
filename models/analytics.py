@@ -1,4 +1,4 @@
-from db.db_config import get_connection
+from dbconnect.db_config import get_connection
 from datetime import datetime
 
 def update_analytics(account_id, txn_type, amount):

@@ -1,4 +1,4 @@
-from db.db_config import get_connection
+from dbconnect.db_config import get_connection
 
 class Transaction:
     def __init__(self):

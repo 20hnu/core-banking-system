@@ -1,4 +1,4 @@
-from db.db_config import get_connection
+from dbconnect.db_config import get_connection
 
 class Customer:
     def __init__(self):
