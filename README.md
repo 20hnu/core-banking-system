@@ -63,7 +63,7 @@ This project is a prototype of a **Core Banking System** developed in **Python**
 
 ## Data Flow Diagram
 
-![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dfd_banking_system.png?raw=true)
+![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dfd_banking_system_lvl0.png?raw=true)
 
 ## Dashboard 
 ![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dashboard_Sample.png?raw=true)
