@@ -76,8 +76,7 @@ This project is a prototype of a **Core Banking System** developed in **Python**
 ![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dfd_banking_system_lvl0.png?raw=true)
 
 2. Level 1 DFD
-
-![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dfd_banking_system _lvl1.png?raw=true)
+![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dfd_banking_system_lvl1.png?raw=true)
 
 ## Dashboard 
 ![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dashboard_Sample.png?raw=true)
