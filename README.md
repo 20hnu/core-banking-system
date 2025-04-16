@@ -60,6 +60,7 @@ This project is a prototype of a **Core Banking System** developed in **Python**
 4. Run Program 
     ```
     python3 main.py
+    ```
 
 5. Open dashboard
     ```
@@ -76,7 +77,7 @@ This project is a prototype of a **Core Banking System** developed in **Python**
 
 2. Level 1 DFD
 
-![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dbconnect/dbconnect/dfd_banking_system _lvl1.png.png?raw=true)
+![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dbconnect/dbconnect/dfd_banking_system _lvl1.png?raw=true)
 
 ## Dashboard 
 ![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dashboard_Sample.png?raw=true)
