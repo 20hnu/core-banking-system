@@ -57,13 +57,26 @@ This project is a prototype of a **Core Banking System** developed in **Python**
     pip install -r requirements.txt
     ```
 
+4. Run Program 
+    ```
+    python3 main.py
+
+5. Open dashboard
+    ```
+    streamlit run dashboard.py
+    ```
+
 ## Entity Relationship Diagram
 
 ![Alt Text](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/modified_erd_banking_system.png?raw=true)
 
 ## Data Flow Diagram
-
+1. Level 0 DFD
 ![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dfd_banking_system_lvl0.png?raw=true)
+
+2. Level 1 DFD
+
+![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dbconnect/dbconnect/dfd_banking_system _lvl1.png.png?raw=true)
 
 ## Dashboard 
 ![Will be posted soon](https://github.com/20hnu/core-banking-system/blob/main/dbconnect/dashboard_Sample.png?raw=true)

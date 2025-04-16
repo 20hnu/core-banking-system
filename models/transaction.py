@@ -9,13 +9,12 @@ class Transaction:
         if account_id != to_account_id:
             try:
                 txn_query = """ INSERT INTO Transactions (account_id, type, amount,remarks,status,to_account_id) VALUES (%s, %s, %s, %s, %s, %s) """
-                # self.cursor.execute(txn_query,(1, "Deposit",80000, "Salary","Success",None))
                 self.cursor.execute(txn_query,(account_id, transaction_type,amount,remarks,"Success",to_account_id))
 
 
                 if transaction_type == "Deposit":
                     balance_query = "UPDATE Account SET balance = balance + %s WHERE account_id = %s"
-                elif transaction_type == "Withdraw":
+                elif transaction_type == "Withdraw" or transaction_type == "Payment":
                     balance_query = "UPDATE Account SET balance = balance - %s WHERE account_id = %s"
                 else:
                     sender_balance_query = "UPDATE Account SET balance = balance - %s WHERE account_id = %s"

@@ -2,6 +2,7 @@ from models.customers import Customer
 from models.transaction import Transaction
 from models.analytics import update_analytics
 
+
 def banking_system():
     customer = Customer()
     txn = Transaction()
