@@ -9,9 +9,7 @@ def update_analytics(account_id, txn_type, amount):
         check_row = "SELECT * from Analytics WHERE account_id = %s AND date = %s"
         curr.execute(check_row, (account_id, date))
         data = curr.fetchone()
-        # txn_type = "Deposit" if txn_type == 1 else ("Withdraw" if txn_type == 2 else ("Transfer" if txn_type == 3 else "Payment"))
         if data:
-            print(txn_type)
             update_query = f""" UPDATE Analytics
             SET 
                 total_transaction = total_transaction + 1,

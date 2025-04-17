@@ -48,7 +48,6 @@ class Transaction:
                     self.cursor.execute(receiver_balance_query, (amount, to_account_id))
 
                 self.conn.commit()
-                print(transaction_type)
                 update_analytics(account_id,transaction_type,amount)
                 print("Transaction successful")
                 return True
