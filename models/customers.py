@@ -55,6 +55,7 @@ class Customer:
             update_login_time = "UPDATE Authenticate SET last_login = NOW() WHERE username like %s"
             self.cursor.execute(update_login_time,(user_name))
             self.conn.commit()
+
             get_account_id = "SELECT account_id FROM Account WHERE customer_id = %s"
             self.cursor.execute(get_account_id,(user['customer_id']))
             account_id = self.cursor.fetchone()
@@ -68,9 +69,3 @@ class Customer:
         finally:
             self.cursor.close()
             self.conn.close()
-        
-
-if __name__ == '__main__':
-    customer = Customer()
-    customer.login("bishow","12345678")
- 

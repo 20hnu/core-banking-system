@@ -39,7 +39,7 @@ if total_data:
 
 # For individual account
 customer = st.text_input( "Enter account number: ")
-data_query = "SELECT account_id, customer_id from Account WHERE account_number = %s"
+data_query = "SELECT account_id, customer_id, balance from Account WHERE account_number = %s"
 clicked = st.button("Submit")
 if clicked:
     curr.execute(data_query,(customer,))
@@ -48,6 +48,7 @@ if clicked:
     curr.execute(name_query,(data["customer_id"],))
     name = curr.fetchone()
     st.write(f"Transaction history of {name['first_name']} {name['middle_name']} {name['last_name']}")
+    st.write (f"Account balance: {data['balance']}")
 
     transaction_query = "SELECT type, sum(amount) as total_amount,count(*) as count from Transactions WHERE account_id = %s and status = 'Success' GROUP BY type"
     curr.execute(transaction_query,(data["account_id"],))

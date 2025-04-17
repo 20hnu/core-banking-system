@@ -33,7 +33,11 @@ class Transaction:
                     update_balance_query = "UPDATE Account SET balance = balance + %s WHERE account_id = %s"
                     self.cursor.execute(update_balance_query, (amount, account_id))
 
-                elif transaction_type in ["Withdraw", "Payment"]:
+                elif transaction_type == "Withdraw":
+                    update_balance_query = "UPDATE Account SET balance = balance - %s WHERE account_id = %s"
+                    self.cursor.execute(update_balance_query, (amount, account_id))
+
+                elif transaction_type == "Payment":
                     update_balance_query = "UPDATE Account SET balance = balance - %s WHERE account_id = %s"
                     self.cursor.execute(update_balance_query, (amount, account_id))
 
@@ -44,6 +48,7 @@ class Transaction:
                     self.cursor.execute(receiver_balance_query, (amount, to_account_id))
 
                 self.conn.commit()
+                print(transaction_type)
                 update_analytics(account_id,transaction_type,amount)
                 print("Transaction successful")
                 return True
