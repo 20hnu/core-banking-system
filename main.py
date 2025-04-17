@@ -1,7 +1,5 @@
 from models.customers import Customer
 from models.transaction import Transaction
-from models.analytics import update_analytics
-
 
 def banking_system():
     customer = Customer()
@@ -29,7 +27,6 @@ def banking_system():
                 to_account_id = int(input("Enter to account id: "))
                 txn.add_transaction(user['account_id'], "Transfer", amount,remarks, to_account_id)
 
-            update_analytics(user['account_id'],txn_type,amount)
         except Exception as e:
             print("Error:",e)
             print("Transaction failed")
